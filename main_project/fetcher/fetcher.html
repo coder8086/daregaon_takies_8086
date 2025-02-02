@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Library</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Video Library</h1>
+
+        <!-- Search Box -->
+        <input type="text" id="searchBox" placeholder="Search videos by title..." oninput="fetchVideos()">
+
+        <!-- Videos Container -->
+        <div id="videoContainer" class="video-container">
+            <!-- Videos will be dynamically loaded here -->
+        </div>
+    </div>
+
+    <script>
+        // Fetch videos from the server and display them
+        function fetchVideos() {
+            const searchQuery = document.getElementById('searchBox').value;
+
+            // Fetch data from PHP
+            fetch(`fetch_videos.php?query=${encodeURIComponent(searchQuery)}`)
+                .then(response => response.json())
+                .then(data => {
+                    const videoContainer = document.getElementById('videoContainer');
+                    videoContainer.innerHTML = ''; // Clear previous results
+
+                    if (data.length === 0) {
+                        videoContainer.innerHTML = '<p>No videos found.</p>';
+                        return;
+                    }
+
+                    // Populate videos dynamically
+                    data.forEach(video => {
+                        const videoDiv = document.createElement('div');
+                        videoDiv.classList.add('video-card');
+
+                        videoDiv.innerHTML = `
+                            <h3>${video.title}</h3>
+                            <video controls>
+                                <source src="${video.video_path}" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <p>Uploaded on: ${new Date(video.uploaded_at).toLocaleString()}</p>
+                        `;
+
+                        videoContainer.appendChild(videoDiv);
+                    });
+                })
+                .catch(error => {
+                    console.error('Error fetching videos:', error);
+                });
+        }
+
+        // Initial fetch
+        fetchVideos();
+    </script>
+</body>
+</html>

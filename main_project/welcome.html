@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+    <title> Daregaon Takies</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Social media">
+    <meta name="author" content="Jaykumar">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	
+	<link rel="stylesheet" style="text/css" href="./myStyle/body-style.css" />
+	<link rel="stylesheet" style="text/css" href="./myStyle/nav-style.css" />
+	<link rel="stylesheet" style="text/css" href="./myStyle/main-div-style.css" />
+    <link rel="stylesheet" style="text/css" href="./myStyle/bottom-menu.css" />
+    <link rel="stylesheet" style="text/css" href="./myStyle/mobile.css" />
+    <link rel="stylesheet" style="text/css" href="./myStyle/post-style.css">
+    
+    <link rel="stylesheet" style="text/css" href="./comment/comment_style.css" />
+    
+    <link rel="stylesheet" href="./comment/comment_style.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="./menuBar/overlay-div.css">
+
+</head>
+
+<body>
+    <nav>
+        <div class="left-div">
+            <img class="logo" src="./images/logo1.jpg" alt="logo" width="50" height="50"/>
+            <h4 class="website_title" id="website_title_wel">Daregoan Takies</h4>
+        </div>
+       <div class="middel-div">
+           <input class = "search-box" id="search-box-wel" type="search"  placeholder="Search"/>
+            <img id="searchIcon-wel" class="searchIcon" src="./images/search.png" width="30" height="30" onclick="changeMe(this)"/>
+        </div>
+        
+        <div class="right-div-wel">
+			<button class="post_btn_for_pc" onclick="makeMyPost()" >Post</button>
+			<div class="login_btn" style="background-color:#336600;">
+				<a class="userName" href="./newLoginSytm/logout.php">
+					<h5 class="login-status" id="username_id">Sign out</h5>
+				</a>
+            </div>
+		</div>
+    </nav>
+    
+    
+         
+   
+    
+    <div id="main-div" class="main-div">
+        
+        <div id="main-content" class="main-content">
+            <h1 id="loading">Somthing went worong...</h1>
+        </div>
+    </div>
+    
+     <div class="bottom-menu">
+        <h4 class="my_about" onclick="openAbout()">About</h4>
+        <img class="my_post_btn" src="mypost.jpg" onclick="openPost()" width="30" height="30">
+        <h4 class="my_profile" >User</h4>
+    </div>
+	
+	<div id="make_post_div" class="overlay-div">
+     <div id="makePost-content" class="makePost-content">
+            
+          <div><h2>POST</h2></div>
+         <div class="postTypeContainer">
+         <div class="post-item"><a href="addVideoPost/post.html">Video</a></div>
+         <div class="post-item"><a  href="addImagePost/postImage.html">Image</a></div>
+        <div class="post-item"><a href="">Future update</a></div>
+         </div>
+         <div> <button class="post_close_btn" onclick="closePost()">Close</button></div>
+   
+			     </div>
+	</div>
+    
+    <div id="commentBox" class="overlay-div">
+        <div id="main-comment-box" class="main-comment-box">
+             
+            <div id="chat_seg_holder" class="chat_seg_holder">
+                  <h4 id="show-comment"></h4>
+             </div>
+            
+            <div>
+                <input id="inputText"placeholder="Comment">
+            </div>
+            
+            <div>
+                 <button id="close_btn" onclick="closeComment()">Cancel</button>
+                 <button id="send_btn" onclick="sendComment()">Send</button>
+             </div>
+          
+        </div>
+    </div>
+    
+    <div id="auther-div" class="overlay-div">
+        <div class="author-div">
+            <img src="Author.jpg" width="54" height="72">
+            <p><strong>About the Author</strong><br>  
+              Jaykumar Rajendra Magare, the creator of Daregaon Takies, is passionate about state the website's focus sharing knowledge, connecting people, or providing resources. 
+                With a strong background in website development,Jaykumar launched this platform to Driven by curiosity and a desire to make a positive impact, they are dedicated to curating valuable content and fostering a community where users can thrive. When not working on the website, [Your Name] enjoys [mention hobbies or personal interests].  
+</p>
+            <div><button class="close_btn" onclick="closeAbout()">Close</button>
+            </div>
+        </div>
+    </div>
+    
+	<audio id="sound" src="bubble_pop.mp3"></audio>
+
+
+	<script src="./fetcher/fetch-priv.js"></script>
+	<script src="./newLoginSytm/first.js"></script>
+	<script src="/likes/like-script.js"></script>
+	<script src="/comment/comment_script.js"></script>
+    <script src="./myScript/multiPage.js"></script>
+     <script src="./menuBar/menubar_scrip.js"></script>
+  <script src="./myScript/search_wel.js"></script>
+
+</body>
+</html>

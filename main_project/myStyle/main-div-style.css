@@ -1,0 +1,112 @@
+﻿.main-div {
+    width: 100%;
+    display: flex;
+    margin-top:70px;
+    justify-content: center;
+    align-items: center;
+}
+.main-content{
+    width:60%;
+    margin-top:65px;
+   margin-bottom: 40px;
+  
+   
+}
+
+.post{
+	width:95%;
+    padding-bottom: 10px;
+	background-color:white;
+	margin-top:10px;
+	border-radius:8px;
+    box-shadow: 10px 10px 8px 10px #f0f0f0;
+}
+.makePost-div{
+	position:fixed;
+	top:1px;
+	width:100vw;
+	height:100vh;
+	background-color:grey;
+	z-index:1;
+	display:none;
+	
+	
+	
+}
+
+.makePost-content {
+    width: 300px;
+    margin: 100px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.button-wrapper {
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.main-button {
+  flex-grow: 1;
+  padding: 10px 20px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.main-button:hover {
+  background-color: #0056b3;
+}
+
+.close-button {
+  padding:15px;
+  border: none;
+  background-color: #dc3545;
+  color: white;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+
+
+﻿.main-div {
+    width: 100%;
+    display: flex;
+    margin-top:5px;
+    background-color:yellow;
+    margin-bottom: 80px;
+}
+.main-content{
+    width:100%;
+    margin-top:5px;
+   margin-bottom: 40px;
+  
+   
+}
+
+.post{
+	width:98%;
+    padding-bottom: 10px;
+	background-color:white;
+	margin-top:10px;
+	border-radius:8px;
+    box-shadow: 10px 10px 8px 10px #888888;
+}
+}

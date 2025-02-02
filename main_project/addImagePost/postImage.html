@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Image</title>
+    <link rel="stylesheet" href="postImage-styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Upload Image</h1>
+        <form id="uploadForm" enctype="multipart/form-data">
+            <label for="title">Image Title:</label>
+            <input type="text" id="title" name="title" required>
+
+            <label for="image">Choose Image:</label>
+            <input type="file" id="image" name="image" accept="image/*" required>
+			<input type="hidden" id="typeImage" name = "typeImage" value="myImage">
+            <button type="submit">Upload</button>
+        </form>
+
+        <div id="progressContainer" style="display: none;">
+            <p>Uploading...</p>
+            <progress id="progressBar" value="0" max="100"></progress>
+            <span id="progressText">0%</span>
+        </div>
+        
+        <div id="status"></div>
+    </div>
+
+    <script src="postImage-script.js"></script>
+</body>
+</html>

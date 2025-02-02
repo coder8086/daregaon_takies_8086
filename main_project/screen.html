@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Screen Size</title>
+</head>
+<body>
+  <h1>Your Screen Size</h1>
+  <p id="screen-size">Loading...</p>
+
+  <script>
+    const screenSize = `Width: ${window.screen.width}px, Height: ${window.screen.height}px`;
+    document.getElementById('screen-size').textContent = screenSize;
+  </script>
+</body>
+</html>

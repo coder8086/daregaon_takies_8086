@@ -1,0 +1,60 @@
+.main-comment-box{
+  margin:5% auto;
+  padding:3px;
+  width:90%;
+background-color:white;
+  border-radius:20px;
+  padding: 4px;
+  display: grid;
+}
+
+#show_comment{
+  height: 30px;
+  margin-top:20px;
+}
+#inputText{
+  margin-top:20px;
+  width:98%;
+  height: 30px;
+  border-radius: 20px;
+  padding: 3px;
+}
+#send_btn{
+  width:60px;
+  height: 40px;
+  float:right;
+  margin-right: 10px;
+  border-radius:20px;
+}
+#close_btn{
+  width:60px;
+  height: 40px;
+  float: right;
+  margin-right: 5px;
+  border-radius: 20px;
+}
+#chat_seg_holder{
+  display: flex;
+  flex-direction: column;
+	max-height: 400px;
+	overflow:sroll;
+
+}
+.chat_seg{
+ align-self: flex-end;
+  height: 30px;
+	margin-top:3px;
+  padding:3px;
+	background-color:yellowgreen;
+	border-radius:9px;
+}
+
+.fetched_chat_seg{
+ align-self: flex-start;
+  height: 30px;
+	margin-top:3px;
+  padding:3px;
+	background-color:yellowgreen;
+	border-radius:9px;
+}
+

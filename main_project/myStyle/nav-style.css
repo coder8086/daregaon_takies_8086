@@ -1,0 +1,156 @@
+nav {
+	position:fixed;
+    width: 100%;
+    height: 60px;
+    background-color:white;
+    padding: 3px;
+	z-index: 1;
+	top:0px;
+	display: flex;
+   }
+
+.left-div{  
+	flex:30%;
+	display: flex;
+	flex-direction: row;
+	}
+.middel-div{
+    flex:40%;
+	}
+	
+.right-div{  	flex:30%;
+	}
+	
+	.right-div-wel{  
+	flex:30%;
+	display:flex;
+	justify-content:space-between;
+	}
+
+.logo{
+	margin:3px;
+	float:left;
+	}
+	
+.website_title{
+	margin-top:15px;
+    font-size:22px;
+    float:left;
+	display: block;
+	}
+
+.searchIcon{
+	margin-top:12px;
+	float: right;
+	display: none;
+}
+.search-box {
+	width:100%;
+	height:38px;
+	margin-top:10px;
+	border-radius:30px;
+	padding:5px;
+	display: block;
+	}
+	
+
+a {
+text-decoration: none;
+}	
+
+h5.login-status{  	
+	color:white;
+	margin-top: 10px;
+   }
+
+
+
+  
+.post_btn_for_pc {
+	display: block;
+	    height: 40px;
+    background: linear-gradient(45deg, #6a11cb, #2575fc);
+    border: none;
+    color: white;
+    padding: 13px 17px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+   	border-radius: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+	cursor: pointer;
+    transition: all 0.3s ease-in-out;
+	margin-top:9px;
+	margin-left:10px;
+    }
+
+.post_btn_for_pc :hover {
+    background: linear-gradient(45deg, #2575fc, #6a11cb);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    }
+
+.post_btn_for_pc :active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+.login_btn{
+	height:40px;
+    width:40%;
+	margin-top:10px;
+	background-color: grey;
+	text-align:center;
+	border-top-left-radius: 20px;
+	border-bottom-left-radius: 20px;
+	float: right;
+   }
+   
+   
+   @media only screen and (max-width: 600px) {
+   
+nav{
+	height: 10vh;
+   }
+.post_btn_for_pc{
+   display: none;
+   }
+
+.left-div{
+    flex:60%;
+  }
+   .middel-div{
+	flex:20%;
+  }
+
+.right-div{
+	flex:20%;
+   }
+   
+.login_btn{
+	height:40px;
+	width:90px;
+	margin-top:10px;
+	display: flex;
+	justify-content: space-around;
+	text-align:center;
+	border-top-left-radius: 20px;
+	border-bottom-left-radius: 20px;
+	float:right;
+   }
+   	.website_title{
+  font-size: 18px;
+   		
+   	}
+   	
+   	.searchIcon{
+	margin-top:12px;
+	float: right;
+   		display: block;
+   		z-index: 2;
+}
+   	.search-box{
+   		display: none;
+   	}
+   }
+

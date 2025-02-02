@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch Posts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .search-box {
+            margin-bottom: 20px;
+        }
+        .search-box input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .posts-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .post {
+            background: white;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: calc(50% - 20px);
+            box-sizing: border-box;
+        }
+        .post img, .post video {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+        .post h3 {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="search-box">
+        <input type="text" id="search" placeholder="Search by title...">
+    </div>
+    <div class="posts-container" id="posts-container"></div>
+
+    <script>
+        const postsContainer = document.getElementById('posts-container');
+        const searchBox = document.getElementById('search');
+
+        // Fetch posts data from the server
+        async function fetchPosts() {
+            try {
+                const response = await fetch('fetch_posts.php'); // Replace with the actual URL to your PHP script
+                const posts = await response.json();
+                displayPosts(posts);
+                setupSearch(posts);
+            } catch (error) {
+                console.error('Error fetching posts:', error);
+            }
+        }
+
+        // Display posts in the container
+        function displayPosts(posts) {
+            postsContainer.innerHTML = ''; // Clear the container
+            posts.forEach(post => {
+                const postDiv = document.createElement('div');
+                postDiv.classList.add('post');
+                postDiv.innerHTML = `
+                    <h3>${post.title}</h3>
+                    ${
+                        post.post_type === 'image'
+                            ? `<img src="${post.post_path}" alt="${post.title}">`
+                            : `<video controls>
+                                  <source src="${post.post_path}" type="video/mp4">
+                                  Your browser does not support the video tag.
+                               </video>`
+                    }
+                `;
+                postsContainer.appendChild(postDiv);
+            });
+        }
+
+        // Set up search functionality
+        function setupSearch(posts) {
+            searchBox.addEventListener('input', () => {
+                const query = searchBox.value.toLowerCase();
+                const filteredPosts = posts.filter(post => post.title.toLowerCase().includes(query));
+                displayPosts(filteredPosts);
+            });
+        }
+
+        // Initialize by fetching posts
+        fetchPosts();
+    </script>
+</body>
+</html>

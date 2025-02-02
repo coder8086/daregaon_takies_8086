@@ -1,0 +1,45 @@
+.my_about{
+	display:none;
+}
+.my_post_btn{
+	display:none;
+}
+.my_profile{
+	display:none;
+}
+
+@media only screen and (max-width: 656px) {
+	
+
+.bottom-menu {
+  position: fixed;
+  width: 90%;
+  height: 30px;
+  bottom: -2px;
+  right: 1px;
+  z-index: 1;
+  background-color: white;
+  color: #fff;
+  padding: 20px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+  display: flex;
+  justify-content: space-around;
+}
+
+h4 {
+  color:black;
+}
+.my_about{
+	display:block;
+}
+.my_post_btn{
+	display:block;
+}
+.my_profile{
+	display:block;
+}
+
+}
+

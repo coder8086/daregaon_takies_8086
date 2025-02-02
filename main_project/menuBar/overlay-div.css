@@ -1,0 +1,76 @@
+.overlay-div{
+position: fixed; /* Sit on top of the page content */
+  display: none; /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer; 
+}
+.author-div{
+  
+  width:80%;
+  background-color: aliceblue; 
+  margin: 50px auto;
+  border-radius: 8px;
+  padding: 10px;
+  
+}
+.close_btn{
+  width:60px;
+  height: 40px;
+  border-radius: 20px;
+  float: right;
+}
+
+
+.makePost-content{
+  width:80%;
+  padding: 4px;
+  margin-top:80px;
+  height: 400px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  
+}
+
+.postTypeContainer{
+  flex: 70%;
+  
+  
+}
+
+.post-item{
+  width:130px;
+  height: 60px;
+  margin: 2px;
+  font-size: 18px;
+  background-color:gray; 
+  float: left;
+  border:1px solid black;
+  border-radius:15px;
+  padding-top:17px; 
+  color:white;
+}
+.post-seg{
+  border-radius: 1px solid black;
+}
+
+.post_close_btn{
+  width:90px;
+  height: 40px;
+  border-radius: 30px;
+  float: right;
+}
+.author-div{
+  
+}
+a {
+  text-decoration: none;
+  color: aliceblue;
+}
